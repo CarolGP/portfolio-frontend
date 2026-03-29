@@ -4,6 +4,8 @@ import { Gallery } from "./pages/Gallery";
 import { About } from "./pages/About";
 import { Contact } from "./pages/Contact";
 import { Navbar } from "./components/Navbar";
+import { Login } from "./pages/Login";
+import { Admin } from "./pages/Admin";
 
 function App(){
     return(
@@ -16,6 +18,8 @@ function App(){
             <Route path="/" element={<About />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path= "/login" element={<Login />} />
+            <Route path= "/admin" element={<Admin />} />
 
           </Routes>
         </BrowserRouter>

@@ -1,0 +1,144 @@
+.gallerySection{
+
+  background-color:#D6D6D6;
+
+  min-height:100vh;
+
+  padding:80px;
+
+}
+
+
+
+/* título */
+
+.galleryTitle{
+
+  color:#4155B9;
+
+  font-size:2.5rem;
+
+  margin-bottom:40px;
+}
+
+
+
+/* grid tipo portfolio */
+
+.galleryGrid{
+
+  display:grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap:30px;
+
+  grid-auto-flow:dense;
+}
+
+
+
+/* tarjeta */
+
+.galleryCard{
+
+  background-color:white;
+
+  border-radius:20px;
+
+  overflow:hidden;
+
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+
+  transition:transform 0.2s;
+}
+
+
+
+/* efecto hover */
+
+.galleryCard:hover{
+
+  transform:scale(1.02);
+}
+
+
+
+/* algunas imágenes más grandes */
+
+.galleryCard.large{
+
+  grid-column: span 2;
+
+  grid-row: span 2;
+}
+
+
+
+/* imagen */
+
+.galleryCard img{
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+}
+
+
+
+/* info debajo de imagen */
+
+.galleryInfo{
+
+  padding:15px;
+}
+
+
+
+/* título imagen */
+
+.galleryInfo h3{
+
+  color:#4155B9;
+
+  margin-bottom:5px;
+}
+
+
+
+/* descripción */
+
+.galleryInfo p{
+
+  font-size:0.9rem;
+
+  margin-bottom:10px;
+}
+
+
+
+/* botón borrar */
+
+.galleryInfo button{
+
+  background-color:#E4664D;
+
+  color:white;
+
+  border:none;
+
+  padding:8px 14px;
+
+  border-radius:8px;
+
+  cursor:pointer;
+}
+
+
+
+.galleryInfo button:hover{
+
+  background-color:#2F97C7;
+}

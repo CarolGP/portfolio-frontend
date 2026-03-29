@@ -1,0 +1,108 @@
+.contactHero{
+
+  background-color:#FEB61A;
+
+  min-height:600px;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  padding:40px 80px 60px 80px;
+
+  gap:40px;
+}
+
+
+
+/* texto */
+
+.contactText{
+
+  max-width:500px;
+}
+
+
+
+.contactTitle{
+
+  font-size:56px;
+
+  color:#4155B9;
+
+  margin-top:0px;
+
+  margin-bottom:20px;
+}
+
+
+
+.contactSubtitle{
+
+  font-size:20px;
+
+  color:#4155B9;
+
+  margin-bottom:25px;
+}
+
+
+
+/* botón */
+
+.contactButton{
+
+  background-color:#E4664D;
+
+  color:white;
+
+  padding:14px 24px;
+
+  border-radius:12px;
+
+  font-size:16px;
+
+  border:none;
+
+  cursor:pointer;
+}
+
+
+
+.contactButton:hover{
+
+  background-color:#2F97C7;
+}
+
+
+
+/* imagen */
+
+.contactImage{
+
+  width:220px;
+
+  border-radius:25px;
+
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.instagramLogo{
+
+  width:28px;
+
+  margin-left:18px;
+
+  vertical-align:middle;
+
+  cursor:pointer;
+}
+
+
+
+.instagramLogo:hover{
+
+  opacity:0.7;
+}

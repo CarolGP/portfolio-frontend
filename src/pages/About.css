@@ -1,0 +1,56 @@
+.aboutHero{
+
+  background-color:#FEB61A;
+
+  min-height:600px;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  padding:60px 80px;
+
+  gap:40px;
+}
+
+
+
+.aboutText{
+
+  max-width:520px;
+}
+
+
+
+.aboutTitle{
+
+  font-size:56px;
+
+  color:#4155B9;
+
+  margin-bottom:20px;
+}
+
+
+
+.aboutParagraph{
+
+  font-size:20px;
+
+  color:#4155B9;
+
+  margin-bottom:18px;
+}
+
+
+
+.aboutImage{
+
+  width:220px;
+
+  border-radius:25px;
+
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}

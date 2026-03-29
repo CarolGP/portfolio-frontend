@@ -1,49 +1,61 @@
 import { useEffect, useState } from "react";
 import { getGallery } from "../services/api";
-import { UploadForm } from "../components/UploadForm";
+
+import "./Gallery.css";
+
 
 export const Gallery = () => {
-    const [items, setItems] = useState([]);
 
-    useEffect(() => {
-        getGallery().then(data => {
-            console.log(data);
+  const [items, setItems] = useState([]);
 
-            setItems(data);
-         });
-    }, []);
 
-    const deleteItem = async (id) => {
-        await fetch (`http://localhost:3000/gallery/${id}`, {
-            method: "DELETE"
-        });
+  useEffect(() => {
 
-        setItems(items.filter(item => item._id !== id));
-    }
+    getGallery().then(data => {
 
-    return(
-        <div>
-            <h1>Galería</h1>
+      setItems(data);
 
-            <UploadForm />
+    });
 
-            {
-              items.map(item => (
-                <div key={item.id}>
+  }, []);
 
-                    <h3>{item.title}</h3>
 
-                    <p>{item.description}</p>
 
-                    <img src={item.imageUrl}
-                    width="200"/>
+  return(
 
-                    <button onClick={() => deleteItem(item._id)}>
-                        Borrar
-                    </button>
-                </div>
-                ))
-            }
-        </div>
-    );
+    <section className="gallerySection">
+
+      <h1 className="galleryTitle">
+        Galería
+      </h1>
+
+
+      <div className="galleryGrid">
+
+        {
+
+          items.map((item) => (
+
+            <div
+              className="galleryCard"
+              key={item._id}
+            >
+
+              <img
+                src={item.imageUrl}
+                alt={item.title}
+              />
+
+            </div>
+
+          ))
+
+        }
+
+      </div>
+
+    </section>
+
+  );
+
 };

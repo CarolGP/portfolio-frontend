@@ -1,0 +1,61 @@
+.navbar{
+
+  background-color:#4155B9;
+
+  padding:20px 60px;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  border-bottom:4px solid black;
+}
+
+
+
+/* nombre grande izquierda */
+
+.logo{
+
+  font-size:36px;
+
+  color:#E4664D;
+
+  font-weight:600;
+}
+
+
+
+/* links derecha */
+
+.navLinks{
+
+  display:flex;
+
+  gap:40px;
+}
+
+
+
+.navLinks a{
+
+  color:white;
+
+  text-decoration:none;
+
+  font-size:18px;
+
+  padding:8px 14px;
+
+  border-radius:20px;
+
+}
+
+
+
+.navLinks a:hover{
+
+  background-color:#E4664D;
+}
