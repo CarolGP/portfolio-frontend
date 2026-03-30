@@ -1,6 +1,28 @@
-.aboutHero{
+.aboutSection{
 
   background-color:#FEB61A;
+
+  padding:80px;
+
+}
+
+
+/* título centrado arriba */
+.aboutTitle{
+
+  font-size:56px;
+
+  color:#4155B9;
+
+  margin-bottom:60px;
+
+  text-align:center;
+
+}
+
+
+/* fila texto + imagen */
+.aboutHero{
 
   min-height:600px;
 
@@ -10,47 +32,38 @@
 
   align-items:center;
 
-  padding:60px 80px;
+  gap:60px;
 
-  gap:40px;
+  max-width:1200px;
+
+  margin:auto;
+
 }
-
 
 
 .aboutText{
 
   max-width:520px;
+
 }
-
-
-
-.aboutTitle{
-
-  font-size:56px;
-
-  color:#4155B9;
-
-  margin-bottom:20px;
-}
-
 
 
 .aboutParagraph{
 
-  font-size:20px;
+  font-size:30px;
 
-  color:#4155B9;
+  color: var(--secondary);
 
   margin-bottom:18px;
+
 }
-
-
 
 .aboutImage{
 
-  width:220px;
+  width:350px;
 
   border-radius:25px;
 
   box-shadow:0 10px 25px rgba(0,0,0,0.08);
+
 }

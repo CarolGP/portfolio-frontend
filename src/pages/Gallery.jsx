@@ -3,11 +3,10 @@ import { getGallery } from "../services/api";
 
 import "./Gallery.css";
 
-
 export const Gallery = () => {
 
   const [items, setItems] = useState([]);
-
+  const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
 
@@ -20,39 +19,59 @@ export const Gallery = () => {
   }, []);
 
 
-
   return(
 
     <section className="gallerySection">
-
-      <h1 className="galleryTitle">
-        Galería
-      </h1>
-
 
       <div className="galleryGrid">
 
         {
 
-          items.map((item) => (
+          items.map((item, index) => {
 
-            <div
-              className="galleryCard"
-              key={item._id}
-            >
+            const sizeClass =
+              index % 7 === 0 ? "large" :
+              index % 5 === 0 ? "wide" : "";
 
-              <img
-                src={item.imageUrl}
-                alt={item.title}
-              />
+            return (
 
-            </div>
+              <div
+                className={`galleryCard ${sizeClass}`}
+                key={item._id}
+                onClick={() => setSelectedImage(item.imageUrl)}
+              >
 
-          ))
+                <img
+                  src={item.imageUrl}
+                  alt={item.title}
+                />
+
+              </div>
+
+            );
+
+          })
 
         }
 
       </div>
+
+
+      {selectedImage && (
+
+        <div
+          className="modalOverlay"
+          onClick={() => setSelectedImage(null)}
+        >
+
+          <img
+            src={selectedImage}
+            className="modalImage"
+          />
+
+        </div>
+
+      )}
 
     </section>
 

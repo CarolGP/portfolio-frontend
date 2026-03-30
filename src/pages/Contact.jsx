@@ -9,46 +9,63 @@ export const Contact = () => {
       <div className="contactText">
 
         <h1 className="contactTitle">
-          Bruno Rodíguez
+          ¿Tienes un proyecto en mente?
         </h1>
 
         <p className="contactSubtitle">
-          ¿Tienes un proyecto en mente?
           Cuéntame tu idea.
         </p>
 
-        <a
-          href="mailto:tuemail@email.com"
-          className="contactButton"
-        >
-          Escribirme
-        </a>
 
-        <a
-        href="https://instagram.com/tuusuario"
-        target="_blank"
-        rel="noopener noreferrer"
-        >
-  <img
-    src="https://res.cloudinary.com/dnet6blln/image/upload/v1774809032/instagram_fdzpxu.png"
-    alt="Instagram"
-    className="instagramLogo"
-  />
-</a>
-        
+        <form className="contactForm">
+
+          <input
+            type="text"
+            placeholder="Nombre"
+          />
+
+          <input
+            type="email"
+            placeholder="Email"
+          />
+
+          <textarea
+            placeholder="Cuéntame tu proyecto"
+          />
+
+
+          <div className="contactActions">
+
+            <button
+              type="button"
+              className="contactButton"
+            >
+              Enviar
+            </button>
+
+
+            <a
+              href="https://instagram.com/tuusuario"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              <img
+                src="https://res.cloudinary.com/dnet6blln/image/upload/v1774809032/instagram_fdzpxu.png"
+                alt="Instagram"
+                className="instagramLogo"
+              />
+
+            </a>
+
+          </div>
+
+        </form>
+
       </div>
-
-
-      <div className="contactIllustration">
-        <img
-          src="https://res.cloudinary.com/dnet6blln/image/upload/v1774806204/IMG_4894_rxcf7h.jpg"
-          alt="Imagen de Bruno Rodríguez, ilustrador"
-          className="contactImage"
-        />
-      </div>
-
 
     </section>
 
   );
+
 };

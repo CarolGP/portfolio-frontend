@@ -1,144 +1,78 @@
 .gallerySection{
-
-  background-color:#D6D6D6;
-
   min-height:100vh;
-
-  padding:80px;
-
+  padding:120px 80px;
 }
-
-
-
-/* título */
 
 .galleryTitle{
-
   color:#4155B9;
-
-  font-size:2.5rem;
-
-  margin-bottom:40px;
+  font-size:3rem;
+  margin-bottom:70px;
 }
 
-
-
-/* grid tipo portfolio */
-
+/* GRID */
 .galleryGrid{
-
   display:grid;
-
   grid-template-columns: repeat(3, 1fr);
+  gap:40px;
 
-  gap:30px;
-
-  grid-auto-flow:dense;
+  /* altura base para que encajen */
+  /* grid-auto-rows: 280px; */
 }
 
-
-
-/* tarjeta */
-
+/* TARJETA */
 .galleryCard{
-
   background-color:white;
-
   border-radius:20px;
-
+  padding:4px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.08);
   overflow:hidden;
-
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
-
-  transition:transform 0.2s;
 }
 
-
-
-/* efecto hover */
-
-.galleryCard:hover{
-
-  transform:scale(1.02);
-}
-
-
-
-/* algunas imágenes más grandes */
-
+/* tamaños */
 .galleryCard.large{
-
-  grid-column: span 2;
-
   grid-row: span 2;
 }
 
+.galleryCard.wide{
+  grid-column: span 2;
+}
 
-
-/* imagen */
-
+/* IMAGEN */
 .galleryCard img{
-
   width:100%;
-
   height:100%;
-
   object-fit:cover;
+  border-radius:14px;
+}
+
+.modalOverlay{
+
+  position:fixed;
+
+  top:0;
+  left:0;
+
+  width:100vw;
+  height:100vh;
+
+  background-color:rgba(0,0,0,0.85);
+
+  display:flex;
+
+  justify-content:center;
+  align-items:center;
+
+  z-index:999;
+
 }
 
 
+.modalImage{
 
-/* info debajo de imagen */
+  max-width:90vw;
 
-.galleryInfo{
+  max-height:90vh;
 
-  padding:15px;
-}
+  border-radius:12px;
 
-
-
-/* título imagen */
-
-.galleryInfo h3{
-
-  color:#4155B9;
-
-  margin-bottom:5px;
-}
-
-
-
-/* descripción */
-
-.galleryInfo p{
-
-  font-size:0.9rem;
-
-  margin-bottom:10px;
-}
-
-
-
-/* botón borrar */
-
-.galleryInfo button{
-
-  background-color:#E4664D;
-
-  color:white;
-
-  border:none;
-
-  padding:8px 14px;
-
-  border-radius:8px;
-
-  cursor:pointer;
-}
-
-
-
-.galleryInfo button:hover{
-
-  background-color:#2F97C7;
 }

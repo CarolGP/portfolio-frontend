@@ -7,20 +7,28 @@ export const Navbar = () => {
 
     <nav className="navbar">
 
-      <div className="logo">
+      <Link to="/" className="logo">
         Bruno Rodríguez
-      </div>
-
+      </Link>
 
       <div className="navLinks">
 
-        <Link to="/">Sobre mí</Link>
+        <Link to="/gallery">
+          Galería
+        </Link>
 
-        <Link to="/gallery">Galería</Link>
 
-        <Link to="/contact">Contacto</Link>
+        <Link to="/portfolio">
+          Portfolio
+        </Link>
 
-        <Link to="/login">Login</Link>
+        <Link to="/contact">
+          Contacto
+        </Link>
+        
+        <Link to="/login">
+          Login
+        </Link>
 
       </div>
 
