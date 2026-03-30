@@ -1,0 +1,75 @@
+.adminSection{
+
+  background-color:#D6D6D6;
+
+  min-height:100vh;
+
+  padding:60px 80px;
+}
+
+
+
+.adminTitle{
+
+  color:#4155B9;
+
+  font-size:42px;
+
+  margin-bottom:30px;
+}
+
+
+
+.adminGrid{
+
+  margin-top:40px;
+
+  display:grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap:25px;
+}
+
+
+
+.adminCard{
+
+  background:white;
+
+  padding:12px;
+
+  border-radius:18px;
+
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+
+  text-align:center;
+}
+
+
+
+.adminCard img{
+
+  width:100%;
+
+  border-radius:12px;
+
+  margin-bottom:10px;
+}
+
+
+
+.adminCard button{
+
+  background-color:#E4664D;
+
+  color:white;
+
+  border:none;
+
+  padding:8px 14px;
+
+  border-radius:8px;
+
+  cursor:pointer;
+}

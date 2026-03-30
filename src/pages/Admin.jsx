@@ -1,31 +1,232 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { UploadForm } from "../components/UploadForm";
+import { getGallery } from "../services/api";
+
+import "./Admin.css";
+
 
 export const Admin = () => {
+
+  const [items, setItems] = useState([]);
+
+  const [editingId, setEditingId] = useState(null);
+
+  const [editData, setEditData] = useState({
+    title:"",
+    description:""
+  });
+
+  const logout = () => {
+
+  localStorage.removeItem("auth");
+
+  window.location.href="/";
+
+};
+
+
 
   useEffect(() => {
 
     const auth = localStorage.getItem("auth");
 
     if(auth !== "true"){
-
-      window.location.href = "/login";
-
+      window.location.href="/login";
     }
+
+    loadGallery();
 
   }, []);
 
 
 
+
+  const loadGallery = () => {
+
+    getGallery().then(data => {
+
+      setItems(data);
+
+    });
+
+  };
+
+
+
+
+  const deleteItem = async (id) => {
+
+    await fetch(`http://localhost:3000/gallery/${id}`, {
+
+      method:"DELETE"
+
+    });
+
+    loadGallery();
+
+  };
+
+
+
+
+  const startEdit = (item) => {
+
+    setEditingId(item._id);
+
+    setEditData({
+
+      title:item.title || "",
+
+      description:item.description || ""
+
+    });
+
+  };
+
+
+
+
+  const handleEditChange = (e) => {
+
+    setEditData({
+
+      ...editData,
+
+      [e.target.name]: e.target.value
+
+    });
+
+  };
+
+
+
+
+  const saveEdit = async (id) => {
+
+    await fetch(`http://localhost:3000/gallery/${id}`, {
+
+      method:"PUT",
+
+      headers:{
+        "Content-Type":"application/json"
+      },
+
+      body:JSON.stringify(editData)
+
+    });
+
+    setEditingId(null);
+
+    loadGallery();
+
+  };
+
+
+
+
   return(
 
-    <div>
+    <section className="adminSection">
 
-      <h1>Panel admin</h1>
+      <h1 className="adminTitle">
+        Panel admin
+      </h1>
 
-      <UploadForm />
+      <button onClick={logout}>
+  Logout
+</button>
 
-    </div>
+
+
+
+      <UploadForm onUpload={loadGallery} />
+
+
+      <div className="adminGrid">
+
+        {
+
+          items.map(item => (
+
+            <div
+              key={item._id}
+              className="adminCard"
+            >
+
+              <img
+                src={item.imageUrl}
+                alt={item.title}
+              />
+
+
+              {
+
+                editingId === item._id ? (
+
+                  <>
+
+                    <input
+                      name="title"
+                      value={editData.title}
+                      onChange={handleEditChange}
+                      placeholder="Título"
+                    />
+
+
+                    <textarea
+                      name="description"
+                      value={editData.description}
+                      onChange={handleEditChange}
+                      placeholder="Descripción"
+                    />
+
+
+                    <button
+                      onClick={() => saveEdit(item._id)}
+                    >
+                      Guardar
+                    </button>
+
+                  </>
+
+                ) : (
+
+                  <>
+
+                    <h3>{item.title}</h3>
+
+                    <p>{item.description}</p>
+
+
+                    <button
+                      onClick={() => startEdit(item)}
+                    >
+                      Editar
+                    </button>
+
+                  </>
+
+                )
+
+              }
+
+
+
+              <button
+                onClick={() => deleteItem(item._id)}
+              >
+                Borrar
+              </button>
+
+            </div>
+
+          ))
+
+        }
+
+      </div>
+
+    </section>
 
   );
 
