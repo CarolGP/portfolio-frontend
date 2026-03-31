@@ -4,10 +4,10 @@ import { getGallery } from "../services/api";
 
 import "./Admin.css";
 
-
 export const Admin = () => {
 
   const [items, setItems] = useState([]);
+  const [portfolioItems, setPortfolioItems] = useState([]);
 
   const [editingId, setEditingId] = useState(null);
 
@@ -16,14 +16,14 @@ export const Admin = () => {
     description:""
   });
 
+
   const logout = () => {
 
-  localStorage.removeItem("auth");
+    localStorage.removeItem("auth");
 
-  window.location.href="/";
+    window.location.href="/";
 
-};
-
+  };
 
 
   useEffect(() => {
@@ -35,9 +35,9 @@ export const Admin = () => {
     }
 
     loadGallery();
+    loadPortfolio();
 
   }, []);
-
 
 
 
@@ -52,6 +52,16 @@ export const Admin = () => {
   };
 
 
+  const loadPortfolio = async () => {
+
+    const res = await fetch("http://localhost:3000/portfolio");
+
+    const data = await res.json();
+
+    setPortfolioItems(data);
+
+  };
+
 
 
   const deleteItem = async (id) => {
@@ -63,9 +73,9 @@ export const Admin = () => {
     });
 
     loadGallery();
+    loadPortfolio();
 
   };
-
 
 
 
@@ -85,7 +95,6 @@ export const Admin = () => {
 
 
 
-
   const handleEditChange = (e) => {
 
     setEditData({
@@ -97,7 +106,6 @@ export const Admin = () => {
     });
 
   };
-
 
 
 
@@ -118,9 +126,9 @@ export const Admin = () => {
     setEditingId(null);
 
     loadGallery();
+    loadPortfolio();
 
   };
-
 
 
 
@@ -133,14 +141,19 @@ export const Admin = () => {
       </h1>
 
       <button onClick={logout}>
-  Logout
-</button>
+        Logout
+      </button>
 
 
 
+      <UploadForm onUpload={()=>{
+        loadGallery();
+        loadPortfolio();
+      }} />
 
-      <UploadForm onUpload={loadGallery} />
 
+
+      <h2>Gallery</h2>
 
       <div className="adminGrid">
 
@@ -225,6 +238,96 @@ export const Admin = () => {
         }
 
       </div>
+
+
+
+      <h2>Portfolio</h2>
+
+      <div className="adminGrid">
+
+        {
+
+          portfolioItems.map(item => (
+
+            <div
+              key={item._id}
+              className="adminCard"
+            >
+
+              <img
+                src={item.imageUrl}
+                alt={item.title}
+              />
+
+
+              {
+
+                editingId === item._id ? (
+
+                  <>
+
+                    <input
+                      name="title"
+                      value={editData.title}
+                      onChange={handleEditChange}
+                      placeholder="Título"
+                    />
+
+
+                    <textarea
+                      name="description"
+                      value={editData.description}
+                      onChange={handleEditChange}
+                      placeholder="Descripción"
+                    />
+
+
+                    <button
+                      onClick={() => saveEdit(item._id)}
+                    >
+                      Guardar
+                    </button>
+
+                  </>
+
+                ) : (
+
+                  <>
+
+                    <h3>{item.title}</h3>
+
+                    <p>{item.description}</p>
+
+
+                    <button
+                      onClick={() => startEdit(item)}
+                    >
+                      Editar
+                    </button>
+
+                  </>
+
+                )
+
+              }
+
+
+
+              <button
+                onClick={() => deleteItem(item._id)}
+              >
+                Borrar
+              </button>
+
+            </div>
+
+          ))
+
+        }
+
+      </div>
+
+
 
     </section>
 

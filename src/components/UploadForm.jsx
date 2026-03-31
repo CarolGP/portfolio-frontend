@@ -5,6 +5,7 @@ export const UploadForm = ({ onUpload }) => {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [image, setImage] = useState(null);
+    const [section, setSection] =useState("gallery");
 
 
 
@@ -17,6 +18,8 @@ export const UploadForm = ({ onUpload }) => {
         formData.append("title", title);
         formData.append("description", description);
         formData.append("image", image);
+
+        formData.append("section", section);
 
 
 
@@ -79,6 +82,19 @@ export const UploadForm = ({ onUpload }) => {
                 onChange={(e) => setImage(e.target.files[0])}
             />
 
+            <select
+            value={section}
+            onChange={(e) => setSection(e.target.value)}
+            >
+                <option value="gallery">
+                    Galería
+                </option>
+
+                <option value="portfolio">
+                    Portfolio
+                </option>
+
+            </select>
 
             <button type="submit">
                 Subir

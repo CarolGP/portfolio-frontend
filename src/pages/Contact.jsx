@@ -45,7 +45,7 @@ export const Contact = () => {
 
 
             <a
-              href="https://instagram.com/tuusuario"
+              href="https://instagram.com/brunorodrigvez"
               target="_blank"
               rel="noopener noreferrer"
             >

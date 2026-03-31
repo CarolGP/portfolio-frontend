@@ -20,9 +20,74 @@
 
 
 
-.adminGrid{
+/* formulario subida */
+
+.adminSection form{
+
+  display:flex;
+
+  gap:12px;
+
+  align-items:center;
+
+  flex-wrap:wrap;
+
+  margin-bottom:30px;
+
+}
+
+
+
+.adminSection input,
+.adminSection textarea,
+.adminSection select{
+
+  padding:8px 12px;
+
+  border-radius:8px;
+
+  border:1px solid #ccc;
+
+  font-size:14px;
+
+  background:white;
+
+}
+
+
+
+.adminSection input[type="file"]{
+
+  border:none;
+
+}
+
+
+
+.adminSection > button{
+
+  margin-bottom:20px;
+}
+
+
+
+/* títulos gallery y portfolio */
+
+.adminSection h2{
 
   margin-top:40px;
+
+  color:#4155B9;
+
+}
+
+
+
+/* grid */
+
+.adminGrid{
+
+  margin-top:20px;
 
   display:grid;
 
@@ -33,17 +98,25 @@
 
 
 
+/* tarjeta */
+
 .adminCard{
 
   background:white;
 
-  padding:12px;
+  padding:14px;
 
   border-radius:18px;
 
   box-shadow:0 8px 20px rgba(0,0,0,0.08);
 
   text-align:center;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:10px;
 }
 
 
@@ -52,12 +125,17 @@
 
   width:100%;
 
+  height:220px;
+
+  object-fit:cover;
+
   border-radius:12px;
 
-  margin-bottom:10px;
 }
 
 
+
+/* botones */
 
 .adminCard button{
 
@@ -72,4 +150,14 @@
   border-radius:8px;
 
   cursor:pointer;
+
+  transition:0.2s;
+}
+
+
+
+.adminCard button:hover{
+
+  opacity:0.85;
+
 }
