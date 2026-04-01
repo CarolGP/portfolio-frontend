@@ -6,13 +6,13 @@
 
   display:flex;
 
-  justify-content:space-between;
+  justify-content:center;
 
   align-items:center;
 
   padding:40px 80px 60px 80px;
 
-  gap:60px;
+  gap:120px;
 
 }
 
@@ -149,6 +149,10 @@
 
   gap:18px;
 
+  max-width: 320px;
+
+  width: 100%;
+
 }
 
 
@@ -158,10 +162,6 @@
 .contactImage{
 
   width:260px;
-
-  border-radius:25px;
-
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
 
 }
 
@@ -176,6 +176,10 @@
 
   margin-top:10px;
 
+}
+
+.contactButton{
+  margin-top: 0;
 }
 
 

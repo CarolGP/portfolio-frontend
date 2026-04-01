@@ -16,7 +16,6 @@ export const Contact = () => {
           Cuéntame tu idea.
         </p>
 
-
         <form className="contactForm">
 
           <input
@@ -33,7 +32,6 @@ export const Contact = () => {
             placeholder="Cuéntame tu proyecto"
           />
 
-
           <div className="contactActions">
 
             <button
@@ -42,7 +40,6 @@ export const Contact = () => {
             >
               Enviar
             </button>
-
 
             <a
               href="https://instagram.com/brunorodrigvez"
@@ -61,6 +58,17 @@ export const Contact = () => {
           </div>
 
         </form>
+
+      </div>
+
+
+      <div className="contactImageContainer">
+
+        <img
+          src="https://res.cloudinary.com/dnet6blln/image/upload/q_auto/f_auto/v1775065890/Logo_tovh87.png"
+          alt="Ilustración contacto"
+          className="contactImage"
+        />
 
       </div>
 

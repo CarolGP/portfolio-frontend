@@ -7,8 +7,17 @@ export const Navbar = () => {
 
     <nav className="navbar">
 
-      <Link to="/" className="logo">
+      <Link to="/" className="brand">
+        <img
+        src="https://res.cloudinary.com/dnet6blln/image/upload/q_auto/f_auto/v1775065890/Logo_tovh87.png"
+        alt="logo"
+        className="brandLogo"
+        />
+
+        <span className="brandName">
         Bruno Rodríguez
+        </span>
+        
       </Link>
 
       <div className="navLinks">

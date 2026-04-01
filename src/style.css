@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600&display=swap');
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -43,6 +46,8 @@ table {
 }
 
 /* MIS CSS */
+
+
 :root{
 
   --primary: #4155B9;   /* azul navbar */
@@ -74,10 +79,14 @@ h1, h2, h3{
 
 }
 
+h1{
+  font-family: "Lilita One", sans-serif;
+}
+
 
 /* texto */
 p{
-
+  font-family: "Source Sans 3", sans-serif;
   color: var(--secondary);
 
 }

@@ -22,10 +22,6 @@ export const Portfolio = () => {
 
     <section className="portfolio">
 
-      <h1 className="portfolioTitle">
-        Portfolio
-      </h1>
-
       <div className="portfolioGallery">
 
         {images.map((item) => (

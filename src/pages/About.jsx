@@ -15,7 +15,7 @@ export const About = () => {
         <div className="aboutText">
 
           <p className="aboutParagraph">
-            Soy ilustrador especializado en ilustración digital.
+            Soy Bruno, ilustrador especializado en ilustración digital.
             Mi trabajo se centra en crear personajes expresivos,
             escenas narrativas y composiciones visuales con un estilo personal.
           </p>
@@ -29,6 +29,7 @@ export const About = () => {
           <p className="aboutParagraph">
             He realizado ilustraciones para proyectos editoriales,
             contenido digital y encargos personalizados.
+            Estoy disponible para colaboraciones y nuevos proyectos.
           </p>
 
         </div>

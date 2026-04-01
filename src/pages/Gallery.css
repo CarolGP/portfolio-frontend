@@ -13,7 +13,9 @@
 .galleryGrid{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
-  gap:40px;
+  gap: 8px;
+
+  grid-auto-rows: 220px;
 
   /* altura base para que encajen */
   /* grid-auto-rows: 280px; */
@@ -22,10 +24,12 @@
 /* TARJETA */
 .galleryCard{
   background-color:white;
-  border-radius:20px;
-  padding:4px;
+  border-radius:12px;
+  padding:2px;
   box-shadow:0 15px 35px rgba(0,0,0,0.08);
   overflow:hidden;
+
+  max-height: 420px;
 }
 
 /* tamaños */
@@ -43,6 +47,13 @@
   height:100%;
   object-fit:cover;
   border-radius:14px;
+
+  transition: transform 0.3s, ease;
+}
+
+.galleryCard:hover img{
+  transform: scale(1.05);
+  cursor: zoom-in;
 }
 
 .modalOverlay{
