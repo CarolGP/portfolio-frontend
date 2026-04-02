@@ -64,19 +64,24 @@ export const Admin = () => {
 
 
 
-  const deleteItem = async (id) => {
+ const deleteItem = async (id) => {
 
-    await fetch(`http://localhost:3000/gallery/${id}`, {
+  const confirmed = window.confirm(
+    "¿Seguro que quieres eliminar esta ilustración?"
+  );
 
-      method:"DELETE"
+  if(!confirmed) return;
 
-    });
+  await fetch(`http://localhost:3000/gallery/${id}`, {
 
-    loadGallery();
-    loadPortfolio();
+    method:"DELETE"
 
-  };
+  });
 
+  loadGallery();
+  loadPortfolio();
+
+};
 
 
   const startEdit = (item) => {

@@ -1,89 +1,106 @@
 .gallerySection{
   min-height:100vh;
-  padding:120px 80px;
+  padding:80px 20px; /* móvil primero */
 }
 
 .galleryTitle{
   color:#4155B9;
-  font-size:3rem;
-  margin-bottom:70px;
+  font-size:2.2rem;
+  margin-bottom:40px;
+  text-align:center;
 }
 
-/* GRID */
+
+
 .galleryGrid{
   display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-
-  grid-auto-rows: 220px;
-
-  /* altura base para que encajen */
-  /* grid-auto-rows: 280px; */
+  grid-template-columns:1fr;
+  gap:10px;
+  grid-auto-rows:200px;
 }
 
-/* TARJETA */
+
 .galleryCard{
   background-color:white;
   border-radius:12px;
   padding:2px;
   box-shadow:0 15px 35px rgba(0,0,0,0.08);
   overflow:hidden;
-
-  max-height: 420px;
 }
 
-/* tamaños */
+
 .galleryCard.large{
-  grid-row: span 2;
+  grid-row:span 2;
 }
 
 .galleryCard.wide{
-  grid-column: span 2;
+  grid-column:span 1;
 }
 
-/* IMAGEN */
+
+
 .galleryCard img{
   width:100%;
   height:100%;
   object-fit:cover;
   border-radius:14px;
-
-  transition: transform 0.3s, ease;
+  transition:transform 0.3s ease;
 }
 
 .galleryCard:hover img{
-  transform: scale(1.05);
-  cursor: zoom-in;
+  transform:scale(1.05);
+  cursor:zoom-in;
 }
 
+
 .modalOverlay{
-
   position:fixed;
-
   top:0;
   left:0;
-
   width:100vw;
   height:100vh;
-
   background-color:rgba(0,0,0,0.85);
-
   display:flex;
-
   justify-content:center;
   align-items:center;
-
   z-index:999;
-
 }
 
 
 .modalImage{
-
-  max-width:90vw;
-
+  max-width:92vw;
   max-height:90vh;
-
   border-radius:12px;
+}
 
+
+/* Responsive */
+
+@media (min-width:600px){
+  .galleryGrid{
+    grid-template-columns:repeat(2,1fr);
+    grid-auto-rows:220px;
+  }
+
+  .galleryTitle{
+    font-size:2.6rem;
+    text-align:left;
+  }
+}
+
+
+@media (min-width:1024px){
+  .gallerySection{
+    padding:120px 80px;
+  }
+
+  .galleryGrid{
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+    grid-auto-rows:220px;
+  }
+
+  .galleryCard.wide{
+    grid-column:span 2;
+  }
 }

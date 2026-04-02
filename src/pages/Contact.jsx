@@ -1,6 +1,57 @@
+import { useState } from "react";
 import "./Contact.css";
 
 export const Contact = () => {
+
+  const [formData, setFormData] = useState({
+    name:"",
+    email:"",
+    message:""
+  });
+
+  const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+
+  const handleChange = (e) => {
+
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+
+  };
+
+
+  const handleSubmit = () => {
+
+    if(!formData.name || !formData.email || !formData.message){
+
+      alert("Completa todos los campos");
+
+      return;
+
+    }
+
+    setLoading(true);
+
+    // simulación de envío
+    setTimeout(() => {
+
+      setSent(true);
+
+      setLoading(false);
+
+      setFormData({
+        name:"",
+        email:"",
+        message:""
+      });
+
+    }, 800);
+
+  };
+
 
   return(
 
@@ -16,30 +67,48 @@ export const Contact = () => {
           Cuéntame tu idea.
         </p>
 
+
         <form className="contactForm">
 
           <input
             type="text"
+            name="name"
             placeholder="Nombre"
+            value={formData.name}
+            onChange={handleChange}
           />
+
 
           <input
             type="email"
+            name="email"
             placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
           />
 
+
           <textarea
+            name="message"
             placeholder="Cuéntame tu proyecto"
+            value={formData.message}
+            onChange={handleChange}
           />
+
 
           <div className="contactActions">
 
             <button
               type="button"
               className="contactButton"
+              onClick={handleSubmit}
+              disabled={loading}
             >
-              Enviar
+
+              {loading ? "Enviando..." : "Enviar"}
+
             </button>
+
 
             <a
               href="https://instagram.com/brunorodrigvez"
@@ -57,9 +126,17 @@ export const Contact = () => {
 
           </div>
 
+
+          {sent && (
+            <p style={{marginTop:"10px"}}>
+              Mensaje enviado correctamente
+            </p>
+          )}
+
         </form>
 
       </div>
+
 
 
       <div className="contactImageContainer">

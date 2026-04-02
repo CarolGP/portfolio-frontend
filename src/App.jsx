@@ -8,26 +8,107 @@ import { Navbar } from "./components/Navbar";
 import { Login } from "./pages/Login";
 import { Admin } from "./pages/Admin";
 
+
+// página 404 dentro del mismo archivo
+const NotFound = () => {
+
+  return(
+
+    <section style={{
+      minHeight:"70vh",
+      display:"flex",
+      flexDirection:"column",
+      justifyContent:"center",
+      alignItems:"center",
+      textAlign:"center",
+      padding:"40px 20px"
+    }}>
+
+      <h1>404</h1>
+
+      <p>Página no encontrada</p>
+
+    </section>
+
+  );
+
+};
+
+
 function App(){
-    return(
-        <BrowserRouter>
 
-          <Navbar />
-          
-          <Routes>
+  return(
 
-            <Route path="/" element={<About />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/portfolio" element= {<Portfolio />}/>
-            <Route path="/contact" element={<Contact />} />
-            <Route path= "/login" element={<Login />} />
-            <Route path= "/admin" element={<Admin />} />
+    <BrowserRouter>
 
-          </Routes>
-        </BrowserRouter>
-    );
+      <Navbar />
+
+      <Routes>
+
+        <Route path="/" element={<About />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/admin" element={<Admin />} />
+
+        {/* 404 */}
+        <Route path="*" element={<NotFound />} />
+
+      </Routes>
+
+
+      <footer className="footer">
+
+        <div className="footerLeft">
+
+          <p>© 2026 Bruno Rodriguez</p>
+
+          <h3 className="footerSubtitle">
+            Ilustración digital y tradicional
+          </h3>
+
+        </div>
+
+
+        <div className="footerRight">
+
+          <a
+            href="https://instagram.com/brunorodrigvez"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            <img
+              src="https://res.cloudinary.com/dnet6blln/image/upload/q_auto/f_auto/v1774809032/instagram_fdzpxu.png"
+              alt="Instagram"
+              style={{
+                width:"18px",
+                marginRight:"6px",
+                verticalAlign:"middle"
+              }}
+            />
+
+            Instagram
+
+          </a>
+
+          <span>|</span>
+
+          <a href="mailto:brunorodriguezdesign@icloud.com">
+
+            ✉️ Email
+
+          </a>
+
+        </div>
+
+      </footer>
+
+    </BrowserRouter>
+
+  );
+
 }
 
 export default App;
-
-
