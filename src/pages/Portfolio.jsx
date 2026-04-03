@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { getPortfolio } from "../services/api";
+
 import "./Portfolio.css";
 
 export const Portfolio = () => {
@@ -7,14 +9,12 @@ export const Portfolio = () => {
 
   useEffect(() => {
 
-    fetch("http://localhost:3000/portfolio")
-      .then(res => res.json())
-      .then(data => {
+    getPortfolio().then(data => {
 
-        console.log(data);
-        setImages(data);
+      console.log(data);
+      setImages(data);
 
-      });
+    });
 
   }, []);
 
