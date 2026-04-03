@@ -9,3 +9,13 @@ export const getGallery = async () => {
     return data;
 
 };
+
+export const getPortfolio = async () => {
+
+    const response = await fetch(`${API_URL}/portfolio`);
+
+    const data = await response.json();
+
+    return data;
+
+};
