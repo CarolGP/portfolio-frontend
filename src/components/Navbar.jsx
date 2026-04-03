@@ -37,19 +37,19 @@ export const Navbar = () => {
 
       <div className={`navLinks ${open ? "open" : ""}`}>
 
-        <Link to="/gallery">
+        <Link to="/gallery" onClick={() => setOpen(false)}>
           Galería
         </Link>
 
-        <Link to="/portfolio">
+        <Link to="/portfolio" onClick={() => setOpen(false)}>
           Portfolio
         </Link>
 
-        <Link to="/contact">
+        <Link to="/contact" onClick={() => setOpen(false)}>
           Contacto
         </Link>
 
-        <Link to="/login">
+        <Link to="/login" onClick={() => setOpen(false)}>
           Login
         </Link>
 
