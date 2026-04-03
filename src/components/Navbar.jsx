@@ -1,31 +1,45 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
+
 import "./NavBar.css";
 
 export const Navbar = () => {
+
+  const [open, setOpen] = useState(false);
 
   return (
 
     <nav className="navbar">
 
       <Link to="/" className="brand">
+
         <img
-        src="https://res.cloudinary.com/dnet6blln/image/upload/q_auto/f_auto/v1775065890/Logo_tovh87.png"
-        alt="logo"
-        className="brandLogo"
+          src="https://res.cloudinary.com/dnet6blln/image/upload/q_auto/f_auto/v1775065890/Logo_tovh87.png"
+          alt="logo"
+          className="brandLogo"
         />
 
         <span className="brandName">
-        Bruno Rodríguez
+          Bruno Rodríguez
         </span>
-        
+
       </Link>
 
-      <div className="navLinks">
+
+      {/* botón hamburguesa */}
+      <button
+        className="menuButton"
+        onClick={() => setOpen(!open)}
+      >
+        ☰
+      </button>
+
+
+      <div className={`navLinks ${open ? "open" : ""}`}>
 
         <Link to="/gallery">
           Galería
         </Link>
-
 
         <Link to="/portfolio">
           Portfolio
@@ -34,7 +48,7 @@ export const Navbar = () => {
         <Link to="/contact">
           Contacto
         </Link>
-        
+
         <Link to="/login">
           Login
         </Link>

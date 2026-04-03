@@ -52,13 +52,23 @@
   background-color:#E4664D;
 }
 
-@media (max-width:768px){
+.menuButton{
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+  @media (max-width:768px){
 
   .navbar{
     flex-direction:column;
     align-items:flex-start;
     gap:12px;
     padding:20px;
+    position:relative;
   }
 
   .brandName{
@@ -69,16 +79,35 @@
     width:40px;
   }
 
-  .navLinks{
-    width:100%;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    gap:10px;
+
+  .menuButton{
+    display:block;
+    position:absolute;
+    right:20px;
+    top:25px;
+    background:none;
+    border:none;
+    font-size:28px;
+    color:white;
+    cursor:pointer;
   }
 
+
+  .navLinks{
+    display:none;
+    flex-direction:column;
+    width:100%;
+    gap:12px;
+  }
+
+  .navLinks.open{
+    display:flex;
+  }
+
+
   .navLinks a{
-    font-size:14px;
-    padding:6px 10px;
+    font-size:16px;
+    padding:8px 0;
   }
 
 }
