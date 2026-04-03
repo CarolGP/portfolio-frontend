@@ -56,8 +56,29 @@
 
   .navbar{
     flex-direction:column;
-    gap:20px;
+    align-items:flex-start;
+    gap:12px;
     padding:20px;
+  }
+
+  .brandName{
+    font-size:32px;
+  }
+
+  .brandLogo{
+    width:40px;
+  }
+
+  .navLinks{
+    width:100%;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  .navLinks a{
+    font-size:14px;
+    padding:6px 10px;
   }
 
 }
