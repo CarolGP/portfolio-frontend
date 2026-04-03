@@ -163,6 +163,38 @@ button:hover{
   opacity:0.8;
 }
 
+.scrollTopButton{
+
+  position:fixed;
+
+  bottom:30px;
+  right:30px;
+
+  width:45px;
+  height:45px;
+
+  border-radius:50%;
+
+  border:none;
+
+  background:#E4664D;
+
+  color:white;
+
+  font-size:20px;
+
+  cursor:pointer;
+
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+
+  z-index:1000;
+
+}
+
+.scrollTopButton:hover{
+  transform:scale(1.1);
+}
+
 /* Responsive */
 
 @media (max-width:768px){

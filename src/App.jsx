@@ -7,6 +7,7 @@ import { Portfolio } from "./pages/Portfolio";
 import { Navbar } from "./components/Navbar";
 import { Login } from "./pages/Login";
 import { Admin } from "./pages/Admin";
+import { ScrollTopButton } from "./components/ScrollTopButton";
 
 
 // página 404 dentro del mismo archivo
@@ -104,6 +105,8 @@ function App(){
         </div>
 
       </footer>
+
+      <ScrollTopButton/>
 
     </BrowserRouter>
 
