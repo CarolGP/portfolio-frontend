@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./Login.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export const Login = () => {
 
   const [username, setUsername] = useState("");
@@ -8,7 +10,7 @@ export const Login = () => {
 
   const handleLogin = async () => {
 
-    const res = await fetch("http://localhost:3000/auth/login", {
+    const res = await fetch(`${API_URL}/auth/login`, {
 
       method: "POST",
 
@@ -38,7 +40,6 @@ export const Login = () => {
     }
 
   };
-
 
 
   return(
