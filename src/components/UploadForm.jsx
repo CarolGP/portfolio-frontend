@@ -1,12 +1,13 @@
 import { useState } from "react";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export const UploadForm = ({ onUpload }) => {
 
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [image, setImage] = useState(null);
-    const [section, setSection] =useState("gallery");
-
+    const [section, setSection] = useState("gallery");
 
 
     const handleSubmit = async (e) => {
@@ -18,12 +19,10 @@ export const UploadForm = ({ onUpload }) => {
         formData.append("title", title);
         formData.append("description", description);
         formData.append("image", image);
-
         formData.append("section", section);
 
 
-
-        const res = await fetch("http://localhost:3000/gallery", {
+        const res = await fetch(`${API_URL}/gallery`, {
 
             method: "POST",
             body: formData
@@ -31,27 +30,21 @@ export const UploadForm = ({ onUpload }) => {
         });
 
 
-
         const data = await res.json();
 
         console.log(data);
 
 
-
-        // limpiar formulario
         setTitle("");
         setDescription("");
         setImage(null);
 
 
-
-        // recargar galería automáticamente
         if(onUpload){
             onUpload();
         }
 
     };
-
 
 
     return(
@@ -82,10 +75,12 @@ export const UploadForm = ({ onUpload }) => {
                 onChange={(e) => setImage(e.target.files[0])}
             />
 
+
             <select
-            value={section}
-            onChange={(e) => setSection(e.target.value)}
+                value={section}
+                onChange={(e) => setSection(e.target.value)}
             >
+
                 <option value="gallery">
                     Galería
                 </option>
@@ -95,6 +90,7 @@ export const UploadForm = ({ onUpload }) => {
                 </option>
 
             </select>
+
 
             <button type="submit">
                 Subir
