@@ -1,11 +1,11 @@
-const API_URL = "http://localhost:3000";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export const getGallery = async () => {
-    const response = await fetch (`${API_URL}/gallery`);
+
+    const response = await fetch(`${API_URL}/gallery`);
 
     const data = await response.json();
 
-    console.log(data);
-
     return data;
+
 };
