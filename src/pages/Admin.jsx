@@ -4,6 +4,8 @@ import { getGallery } from "../services/api";
 
 import "./Admin.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export const Admin = () => {
 
   const [items, setItems] = useState([]);
@@ -54,7 +56,7 @@ export const Admin = () => {
 
   const loadPortfolio = async () => {
 
-    const res = await fetch("http://localhost:3000/portfolio");
+    const res = await fetch(`${API_URL}/portfolio`);
 
     const data = await res.json();
 
@@ -72,7 +74,7 @@ export const Admin = () => {
 
   if(!confirmed) return;
 
-  await fetch(`http://localhost:3000/gallery/${id}`, {
+  await fetch(`${API_URL}/gallery/${id}`, {
 
     method:"DELETE"
 
@@ -116,7 +118,7 @@ export const Admin = () => {
 
   const saveEdit = async (id) => {
 
-    await fetch(`http://localhost:3000/gallery/${id}`, {
+    await fetch(`${API_URL}/gallery/${id}`, {
 
       method:"PUT",
 
