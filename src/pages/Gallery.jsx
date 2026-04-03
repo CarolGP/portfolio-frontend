@@ -7,16 +7,26 @@ export const Gallery = () => {
 
   const [items, setItems] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [loading, setLoading] = useState(true);
+
 
   useEffect(() => {
 
     getGallery().then(data => {
 
       setItems(data);
+      setLoading(false);
 
     });
 
   }, []);
+
+
+  if(loading){
+
+    return <p className="loading">Cargando...</p>;
+
+  }
 
 
   return(

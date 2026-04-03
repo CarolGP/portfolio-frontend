@@ -6,6 +6,8 @@ import "./Portfolio.css";
 export const Portfolio = () => {
 
   const [images, setImages] = useState([]);
+  const [loading, setLoading] = useState(true);
+
 
   useEffect(() => {
 
@@ -13,10 +15,19 @@ export const Portfolio = () => {
 
       console.log(data);
       setImages(data);
+      setLoading(false);
 
     });
 
   }, []);
+
+
+  if(loading){
+
+    return <p className="loading">Cargando...</p>;
+
+  }
+
 
   return(
 
