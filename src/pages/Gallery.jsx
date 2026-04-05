@@ -9,25 +9,19 @@ export const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [loading, setLoading] = useState(true);
 
-
   useEffect(() => {
-
     getGallery().then(data => {
-
       setItems(data);
       setLoading(false);
-
     });
 
   }, []);
-
 
   if(loading){
 
     return <p className="loading">Cargando...</p>;
 
   }
-
 
   return(
 
@@ -36,9 +30,7 @@ export const Gallery = () => {
       <div className="galleryGrid">
 
         {
-
           items.map((item, index) => {
-
             const sizeClass =
               index % 7 === 0 ? "large" :
               index % 5 === 0 ? "wide" : "";
@@ -55,15 +47,10 @@ export const Gallery = () => {
                   src={item.imageUrl}
                   alt={item.title}
                 />
-
               </div>
-
             );
-
           })
-
         }
-
       </div>
 
 
@@ -80,11 +67,7 @@ export const Gallery = () => {
           />
 
         </div>
-
       )}
-
     </section>
-
   );
-
 };

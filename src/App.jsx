@@ -10,11 +10,8 @@ import { Admin } from "./pages/Admin";
 import { ScrollTopButton } from "./components/ScrollTopButton";
 
 
-// página 404 dentro del mismo archivo
 const NotFound = () => {
-
   return(
-
     <section style={{
       minHeight:"70vh",
       display:"flex",
@@ -30,14 +27,11 @@ const NotFound = () => {
       <p>Página no encontrada</p>
 
     </section>
-
   );
-
 };
 
 
 function App(){
-
   return(
 
     <BrowserRouter>
@@ -52,28 +46,21 @@ function App(){
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<Admin />} />
-
-        {/* 404 */}
         <Route path="*" element={<NotFound />} />
-
       </Routes>
-
 
       <footer className="footer">
 
         <div className="footerLeft">
-
           <p>© 2026 Bruno Rodriguez</p>
 
           <h3 className="footerSubtitle">
             Ilustración digital y tradicional
           </h3>
-
         </div>
 
 
         <div className="footerRight">
-
           <a
             href="https://instagram.com/brunorodrigvez"
             target="_blank"
@@ -89,29 +76,17 @@ function App(){
                 verticalAlign:"middle"
               }}
             />
-
             Instagram
-
           </a>
-
           <span>|</span>
 
           <a href="mailto:brunorodriguezdesign@icloud.com">
-
             ✉️ Email
-
           </a>
-
         </div>
-
       </footer>
-
       <ScrollTopButton/>
-
     </BrowserRouter>
-
   );
-
 }
-
 export default App;

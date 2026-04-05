@@ -8,7 +8,6 @@ export const Portfolio = () => {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
 
-
   useEffect(() => {
 
     getPortfolio().then(data => {
@@ -16,18 +15,15 @@ export const Portfolio = () => {
       console.log(data);
       setImages(data);
       setLoading(false);
-
     });
 
   }, []);
-
 
   if(loading){
 
     return <p className="loading">Cargando...</p>;
 
   }
-
 
   return(
 
@@ -43,13 +39,8 @@ export const Portfolio = () => {
             alt={item.title}
             className="portfolioImage"
           />
-
         ))}
-
       </div>
-
     </section>
-
   );
-
 };

@@ -11,7 +11,6 @@ export const UploadForm = ({ onUpload }) => {
 
 
     const handleSubmit = async (e) => {
-
         e.preventDefault();
 
         const formData = new FormData();
@@ -23,17 +22,14 @@ export const UploadForm = ({ onUpload }) => {
 
 
         const res = await fetch(`${API_URL}/gallery`, {
-
             method: "POST",
             body: formData
-
         });
 
 
         const data = await res.json();
 
         console.log(data);
-
 
         setTitle("");
         setDescription("");
@@ -43,7 +39,6 @@ export const UploadForm = ({ onUpload }) => {
         if(onUpload){
             onUpload();
         }
-
     };
 
 
@@ -53,14 +48,12 @@ export const UploadForm = ({ onUpload }) => {
 
             <h2>Subir ilustración</h2>
 
-
             <input
                 type="text"
                 placeholder="Título"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
             />
-
 
             <input
                 type="text"
@@ -69,12 +62,10 @@ export const UploadForm = ({ onUpload }) => {
                 onChange={(e) => setDescription(e.target.value)}
             />
 
-
             <input
                 type="file"
                 onChange={(e) => setImage(e.target.files[0])}
             />
-
 
             <select
                 value={section}
@@ -88,16 +79,11 @@ export const UploadForm = ({ onUpload }) => {
                 <option value="portfolio">
                     Portfolio
                 </option>
-
             </select>
-
 
             <button type="submit">
                 Subir
             </button>
-
         </form>
-
     );
-
 };

@@ -12,44 +12,32 @@ export const Contact = () => {
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
 
-
   const handleChange = (e) => {
-
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
-
   };
 
 
   const handleSubmit = () => {
-
     if(!formData.name || !formData.email || !formData.message){
-
       alert("Completa todos los campos");
 
       return;
-
     }
-
     setLoading(true);
 
-    // simulación de envío
+    // Envío simulado son conectar con un email
     setTimeout(() => {
-
       setSent(true);
-
       setLoading(false);
-
       setFormData({
         name:"",
         email:"",
         message:""
       });
-
     }, 800);
-
   };
 
 
@@ -69,7 +57,6 @@ export const Contact = () => {
 
 
         <form className="contactForm">
-
           <input
             type="text"
             name="name"
@@ -78,7 +65,6 @@ export const Contact = () => {
             onChange={handleChange}
           />
 
-
           <input
             type="email"
             name="email"
@@ -86,7 +72,6 @@ export const Contact = () => {
             value={formData.email}
             onChange={handleChange}
           />
-
 
           <textarea
             name="message"
@@ -121,9 +106,7 @@ export const Contact = () => {
                 alt="Instagram"
                 className="instagramLogo"
               />
-
             </a>
-
           </div>
 
 
@@ -132,11 +115,8 @@ export const Contact = () => {
               Mensaje enviado correctamente
             </p>
           )}
-
         </form>
-
       </div>
-
 
 
       <div className="contactImageContainer">
@@ -146,11 +126,7 @@ export const Contact = () => {
           alt="Ilustración contacto"
           className="contactImage"
         />
-
       </div>
-
     </section>
-
   );
-
 };

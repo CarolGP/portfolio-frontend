@@ -11,18 +11,14 @@ export const Login = () => {
   const handleLogin = async () => {
 
     const res = await fetch(`${API_URL}/auth/login`, {
-
       method: "POST",
-
       headers: {
         "Content-Type": "application/json"
       },
-
       body: JSON.stringify({
         username,
         password
       })
-
     });
 
     const data = await res.json();
@@ -30,17 +26,13 @@ export const Login = () => {
     if(data.success){
 
       localStorage.setItem("auth","true");
-
       window.location.href="/admin";
 
     } else {
 
       alert("Credenciales incorrectas");
-
     }
-
   };
-
 
   return(
 
@@ -61,7 +53,6 @@ export const Login = () => {
           className="loginInput"
         />
 
-
         <input
           type="password"
           placeholder="Contraseña"
@@ -70,18 +61,13 @@ export const Login = () => {
           className="loginInput"
         />
 
-
         <button
           onClick={handleLogin}
           className="loginButton"
         >
           Entrar
         </button>
-
       </div>
-
     </section>
-
   );
-
 };

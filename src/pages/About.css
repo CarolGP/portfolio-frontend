@@ -78,12 +78,10 @@
     gap:60px;
   }
 
-
   .aboutText{
     text-align:left;
     flex:1;
   }
-
 
   .aboutParagraph{
     font-size:30px;

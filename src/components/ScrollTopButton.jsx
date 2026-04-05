@@ -1,24 +1,16 @@
 import { useEffect, useState } from "react";
 
 export const ScrollTopButton = () => {
-
   const [visible, setVisible] = useState(false);
 
-
   useEffect(() => {
-
     const handleScroll = () => {
-
       if(window.scrollY > 300){
-
         setVisible(true);
 
       } else {
-
         setVisible(false);
-
       }
-
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -29,22 +21,15 @@ export const ScrollTopButton = () => {
 
 
   const scrollToTop = () => {
-
     window.scrollTo({
-
       top:0,
       behavior:"smooth"
-
     });
-
   };
-
 
   if(!visible) return null;
 
-
   return(
-
     <button
       className="scrollTopButton"
       onClick={scrollToTop}
@@ -53,7 +38,5 @@ export const ScrollTopButton = () => {
       ↑
 
     </button>
-
   );
-
 };

@@ -42,7 +42,6 @@ export const Admin = () => {
   }, []);
 
 
-
   const loadGallery = () => {
 
     getGallery().then(data => {
@@ -50,14 +49,12 @@ export const Admin = () => {
       setItems(data);
 
     });
-
   };
 
 
   const loadPortfolio = async () => {
 
     const res = await fetch(`${API_URL}/portfolio`);
-
     const data = await res.json();
 
     setPortfolioItems(data);
@@ -65,9 +62,7 @@ export const Admin = () => {
   };
 
 
-
  const deleteItem = async (id) => {
-
   const confirmed = window.confirm(
     "¿Seguro que quieres eliminar esta ilustración?"
   );
@@ -91,27 +86,18 @@ export const Admin = () => {
     setEditingId(item._id);
 
     setEditData({
-
       title:item.title || "",
-
       description:item.description || ""
-
     });
-
   };
-
 
 
   const handleEditChange = (e) => {
 
     setEditData({
-
       ...editData,
-
       [e.target.name]: e.target.value
-
     });
-
   };
 
 
@@ -119,9 +105,7 @@ export const Admin = () => {
   const saveEdit = async (id) => {
 
     await fetch(`${API_URL}/gallery/${id}`, {
-
       method:"PUT",
-
       headers:{
         "Content-Type":"application/json"
       },
@@ -137,8 +121,6 @@ export const Admin = () => {
 
   };
 
-
-
   return(
 
     <section className="adminSection">
@@ -152,12 +134,10 @@ export const Admin = () => {
       </button>
 
 
-
       <UploadForm onUpload={()=>{
         loadGallery();
         loadPortfolio();
       }} />
-
 
 
       <h2>Gallery</h2>
@@ -178,7 +158,6 @@ export const Admin = () => {
                 alt={item.title}
               />
 
-
               {
 
                 editingId === item._id ? (
@@ -192,7 +171,6 @@ export const Admin = () => {
                       placeholder="Título"
                     />
 
-
                     <textarea
                       name="description"
                       value={editData.description}
@@ -200,15 +178,12 @@ export const Admin = () => {
                       placeholder="Descripción"
                     />
 
-
                     <button
                       onClick={() => saveEdit(item._id)}
                     >
                       Guardar
                     </button>
-
                   </>
-
                 ) : (
 
                   <>
@@ -223,13 +198,9 @@ export const Admin = () => {
                     >
                       Editar
                     </button>
-
                   </>
-
                 )
-
               }
-
 
 
               <button
@@ -237,15 +208,10 @@ export const Admin = () => {
               >
                 Borrar
               </button>
-
             </div>
-
           ))
-
         }
-
       </div>
-
 
 
       <h2>Portfolio</h2>
@@ -253,7 +219,6 @@ export const Admin = () => {
       <div className="adminGrid">
 
         {
-
           portfolioItems.map(item => (
 
             <div
@@ -266,9 +231,7 @@ export const Admin = () => {
                 alt={item.title}
               />
 
-
               {
-
                 editingId === item._id ? (
 
                   <>
@@ -279,7 +242,6 @@ export const Admin = () => {
                       onChange={handleEditChange}
                       placeholder="Título"
                     />
-
 
                     <textarea
                       name="description"
@@ -305,7 +267,6 @@ export const Admin = () => {
 
                     <p>{item.description}</p>
 
-
                     <button
                       onClick={() => startEdit(item)}
                     >
@@ -313,11 +274,8 @@ export const Admin = () => {
                     </button>
 
                   </>
-
                 )
-
               }
-
 
 
               <button
@@ -325,19 +283,10 @@ export const Admin = () => {
               >
                 Borrar
               </button>
-
             </div>
-
           ))
-
         }
-
       </div>
-
-
-
     </section>
-
   );
-
 };
